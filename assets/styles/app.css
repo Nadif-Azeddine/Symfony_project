@@ -1,0 +1,164 @@
+:root {
+    --primary: #209bff;
+    --secondary: #5433FF;
+    --third: #A5FECB;
+}
+
+body {
+    background-color: rgb(253, 253, 253);
+    min-height: 100vh;
+    color: rgb(27, 30, 32) !important;
+    position: relative;
+}
+
+* {
+    color: inherit;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 400px;
+    background: linear-gradient(var(--secondary), var(--primary), var(--third));
+    filter: blur(100px);
+    z-index: -1;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+.text-secondary {
+    color: var(--secondary) !important;
+}
+
+.text-third {
+    color: var(--third) !important;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.781);
+    backdrop-filter: blur(20px);
+}
+
+button,
+button:focus {
+    border: 0px solid white;
+    outline: 0px solid white;
+    box-shadow: 0px 0px 0px black;
+    text-align: center;
+    transition: all 200ms ease;
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    border: 0px solid var(--primary);
+}
+
+.card {
+    border: 0px solid black;
+    background: linear-gradient(160deg, var(--third) 20%, var(--primary) 110%);
+}
+
+form .text-area {
+    width: 100% !important;
+    /* min-height: 100px !important; */
+
+}
+
+form ul {
+    list-style: none !important;
+    padding: 0px !important;
+}
+
+form ul li {
+    text-align: initial !important;
+    color: #ff4b4b !important;
+    padding: 9px !important;
+    background: #ffdbdb !important;
+    border-radius: 7px !important;
+    margin: 10px 0px !important;
+}
+
+@media (max-width: 600px) {
+    .ball {
+        left: 110% !important;
+        top: 112px !important;
+    }
+
+    .ball img {
+        width: 220px !important;
+        height: 220px !important;
+    }
+
+}
+
+
+.h-px-25 {
+    height: 25px !important
+}
+
+.h-px-30 {
+    height: 30px !important
+}
+
+.h-px-40 {
+    height: 40px !important;
+
+}
+
+.h-px-50 {
+    height: 50px !important
+}
+
+.h-px-75 {
+    height: 75px !important
+}
+
+.h-px-100 {
+    height: 100px !important
+}
+
+.h-px-150 {
+    height: 150px !important
+}
+
+.h-px-200 {
+    height: 200px !important
+}
+
+.h-px-250 {
+    height: 250px !important
+}
+
+.h-px-300 {
+    height: 300px !important
+}
+
+.h-px-350 {
+    height: 350px !important
+}
+
+.h-px-400 {
+    height: 400px !important
+}
+
+.h-px-500 {
+    height: 500px !important
+}
+
+.h-px-600 {
+    height: 600px !important
+}
+
+.h-px-700 {
+    height: 700px !important
+}
+
+.h-px-800 {
+    height: 800px !important
+}

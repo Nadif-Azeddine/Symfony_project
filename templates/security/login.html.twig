@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!
+{% endblock %}
+{% block styles %}
+	<style>
+		body::after {
+			content: none !important;
+		}
+	</style>
+{% endblock %}
+{% block body %}
+	<form method="post">
+
+		{% if app.user %}
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
+		{% endif %}
+
+		<div class="d-flex flex-column py-3 align-items-center col-12 vh-100">
+			<div class="card col-md-8 rounded-4 shadow col-lg-6 col-11" style="background:#fff !important">
+				<div class="card-body py-4">
+					{% if error %}
+						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+					{% endif %}
+					<label for="inputPseudoNom">Pseudo Nom</label>
+					<input type="text" value="{{ last_username }}" name="PseudoNom" id="inputPseudoNom" class="form-control" autocomplete="username" required autofocus>
+					<div class="my-4"></div>
+
+					<label for="inputPassword">Password</label>
+					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+					<div class="my-2"></div>
+
+					<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+					<button class="btn px-5 col-12 mt-3 py-2 btn-primary rounded-5 shadow">Connecter</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
