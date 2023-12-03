@@ -6,6 +6,7 @@ use App\Entity\Utilisateur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -44,6 +45,12 @@ class RegistrationFormType extends AbstractType
                     "class" => "form-control",
                 ],
             ])
+            ->add('dateNaissance', DateType::class, [
+                'widget' => 'single_text',
+                'attr' => [
+                    "class" => "form-control",
+                ],
+            ])
             ->add('sexe', ChoiceType::class, [
                 'attr' => [
                     "class" => "d-flex gap-2 form-control",
@@ -52,11 +59,11 @@ class RegistrationFormType extends AbstractType
                     'Male' => 'M',
                     'Female' => 'F',
                 ],
-                'choice_attr' => function($choice, $key, $value) {
+                'choice_attr' => function ($choice, $key, $value) {
                     // Define classes for each choice
                     return ['class' => 'form-check-input ' . $value];
                 },
-                'expanded' => true, 
+                'expanded' => true,
                 'label' => 'Sexe',
                 'multiple' => false,
             ])
@@ -66,7 +73,7 @@ class RegistrationFormType extends AbstractType
                     'Member' => 'member',
                     'example' => 'member',
                     'test2' => 'member',
-                   
+
                 ],
                 'attr' => [
                     "class" => "form-select",
@@ -74,18 +81,18 @@ class RegistrationFormType extends AbstractType
                 'placeholder' => 'Profession',
                 'multiple' => false
             ])
-          
+
             ->add('plainPassword', PasswordType::class, [
-                                // instead of being set onto the object directly,
+                // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                
-                'attr' => [
-                'autocomplete' => 'new-password',
-                "class" => "form-control",
-                'placeholder' => '********',
 
-            ],
+                'attr' => [
+                    'autocomplete' => 'new-password',
+                    "class" => "form-control",
+                    'placeholder' => '********',
+
+                ],
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Please enter a password',

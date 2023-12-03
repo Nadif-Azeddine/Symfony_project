@@ -21,6 +21,14 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $user->setPseudoNom($form->get('PseudoNom')->getData());
+            $user->setSexe($form->get('sexe')->getData());
+            $user->setNom($form->get('nom')->getData());
+            $user->setPrenom($form->get('prenom')->getData());
+            $user->setAdresse($form->get('adresse')->getData());
+            $user->setDateNaissance($form->get('dateNaissance')->getData());
+            $user->setProfession($form->get('profession')->getData());
             // encode the plain password
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
@@ -28,13 +36,6 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setPseudoNom($form->get('PseudoNom')->getData());
-            $user->setSexe($form->get('sexe')->getData());
-            $user->setNom($form->get('nom')->getData());
-            $user->setPrenom($form->get('prenom')->getData());
-            $user->setAdresse($form->get('adresse')->getData());
-            $user->setProfession($form->get('profession')->getData());
-
             $entityManager->persist($user);
             $entityManager->flush();
             // do anything else you need here, like send an email

@@ -19,40 +19,41 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\Column(length: 50)]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    #[Assert\NotBlank(message: 'pseudo nom should not be blank')]
     private ?string $PseudoNom = null;
 
     #[ORM\Column(length: 50, nullable: true)]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    #[Assert\NotBlank(message: 'nom should not be blank')]
     private ?string $nom = null;
 
     #[ORM\Column(length: 50, nullable: true)]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    #[Assert\NotBlank(message: 'prenom should not be blank')]
     private ?string $prenom = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    #[Assert\NotBlank(message: 'addresse should not be blank')]
     private ?string $adresse = null;
 
     #[ORM\Column(length: 2)]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    #[Assert\NotBlank(message: 'sexe should not be blank')]
     private ?string $sexe = null;
 
     /**
      * @var string The hashed password
      */
     #[ORM\Column]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    // #[Assert\NotBlank(message: 'password should not be blank')]
     private ?string $password = null;
 
     #[ORM\Column(length: 40, nullable: true)]
-    #[Assert\NotBlank(message: 'This value should not be blank')]
+    #[Assert\NotBlank(message: 'profession should not be blank')]
     private ?string $profession = null;
 
     #[ORM\Column]
     private array $roles = [];
 
     #[ORM\Column(type: Types::DATE_MUTABLE, nullable: true)]
+    #[Assert\NotBlank(message: 'This value should not be blank')]
     private ?\DateTimeInterface $dateNaissance = null;
 
     #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Reclamation::class, orphanRemoval: true)]
