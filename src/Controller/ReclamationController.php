@@ -30,6 +30,11 @@ class ReclamationController extends AbstractController
         $reclamation = new Reclamation();
         $form = $this->createForm(ReclamationFormType::class, $reclamation);
 
+        // show the reclamation o the current user
+        $utilisateur = $this->entityManager->getRepository(Utilisateur::class)->find($this->getUser()->getUserIdentifier());
+
+        $reclamations = $utilisateur->getReclamations();
+
         try {
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
@@ -38,7 +43,6 @@ class ReclamationController extends AbstractController
 
                 $reclamation->setDateReclamation(new \DateTime());
 
-                $utilisateur = $this->entityManager->getRepository(Utilisateur::class)->find($user->getUserIdentifier());
                 $reclamation->setUtilisateur($utilisateur);
 
                 $this->entityManager->persist($reclamation);
@@ -53,6 +57,7 @@ class ReclamationController extends AbstractController
 
         return $this->render('reclamation/index.html.twig', [
             'form' => $form->createView(),
+            'reclamations' => $reclamations,
         ]);
     }
 
