@@ -10,7 +10,7 @@
 		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, labore.</p>
 		<div class="col-md-8 col-lg-6 col-sm-10">
 			{{ form_start(form) }}
-
+			
 			{{ form_widget(form) }}
 
 			<button class="btn px-5 col-12 mt-3 py-2 btn-primary rounded-5 shadow">Ajouter</button>
@@ -33,10 +33,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% set index = 1 %}
 				{% for reclamation in reclamations %}
 					<tr>
-						<th scope="row">{{index}}</th>
+						<th scope="row">{{loop.index}}</th>
 						<td>
 							{% if reclamation.corpReclamation|length > 20 %}
 								{{ reclamation.corpReclamation|slice(0, 20) ~ '...' }}
@@ -69,7 +68,6 @@
 							</div>
 						</td>
 					</tr>
-					{% set index =+ 1 %}
 				{% endfor %}
 			</tbody>
 		</table>

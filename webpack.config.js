@@ -55,7 +55,7 @@ Encore
     .copyFiles({
         from: './assets/images',
         to: 'images/[name].[hash].[ext]',
-        pattern: /\.(png|jpeg|jps)$/
+        pattern: /\.(png|jpeg|jps|jpg)$/
 
     })
     // enables Sass/SCSS support
