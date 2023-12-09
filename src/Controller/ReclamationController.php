@@ -10,6 +10,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ReclamationController extends AbstractController
@@ -38,15 +39,15 @@ class ReclamationController extends AbstractController
         try {
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
-
-                $user = $this->getUser();
-
+                
                 $reclamation->setDateReclamation(new \DateTime());
 
                 $reclamation->setUtilisateur($utilisateur);
 
                 $this->entityManager->persist($reclamation);
                 $this->entityManager->flush();
+
+                $this->addFlash('message', 'reclamation added successfully');
 
                 return $this->redirectToRoute('app_reclamation');
             }
@@ -98,6 +99,9 @@ class ReclamationController extends AbstractController
 
                     $reclamation->setCorpReclamation($form->get('CorpReclamation')->getData());
                     $this->entityManager->flush();
+
+                $this->addFlash('message', 'reclamation updated successfully');
+
 
                     return $this->redirectToRoute('edit_reclamation', ['id' => $id]);
                 }

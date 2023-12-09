@@ -4,13 +4,20 @@
 {% endblock %}
 
 {% block body %}
+
+{% for message in app.flashes('message') %}
+	<div class="alert alert-info col-12 col-md-6 col-lg-6 shadow text-center position-fixed start-50 translate-middle-x" style="top:70px" role="alert">
+		<strong>{{message}}</strong>
+	</div>
+{% endfor %}
+	
 	<div class="d-flex flex-column  align-items-center text-center" style="margin-top:-50px">
 		<img src="{{asset('build/images/cible.2301f272c1346966af5174ff68e01286.png')}}" alt="cible" width="170px" height="170px">
 		<h1 class="fw-bold">Ajouter Une Reclamation</h1>
 		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, labore.</p>
 		<div class="col-md-8 col-lg-6 col-sm-10">
 			{{ form_start(form) }}
-			
+
 			{{ form_widget(form) }}
 
 			<button class="btn px-5 col-12 mt-3 py-2 btn-primary rounded-5 shadow">Ajouter</button>
@@ -71,4 +78,12 @@
 				{% endfor %}
 			</tbody>
 		</table>
+		{% block scripts %}
+			<script>
+				setTimeout(() => {
+$(".alert").remove();
+}, 7000);
+			</script>
+		{% endblock %}
+
 	{% endblock %}

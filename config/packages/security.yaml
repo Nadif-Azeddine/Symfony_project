@@ -35,6 +35,7 @@ security:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         - { path: ^/reclamation, roles: ROLE_USER }
         - { path: ^/dashboard, roles: ROLE_ADMIN }
+        - { path: ^/export, roles: ROLE_ADMIN }
 
 when@test:
     security:
