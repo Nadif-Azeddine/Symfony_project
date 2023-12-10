@@ -5,14 +5,14 @@
 
 {% block body %}
 
-{% for message in app.flashes('message') %}
-	<div class="alert alert-info col-12 col-md-6 col-lg-6 shadow text-center position-fixed start-50 translate-middle-x" style="top:70px" role="alert">
-		<strong>{{message}}</strong>
-	</div>
-{% endfor %}
-	
-	<div class="d-flex flex-column  align-items-center text-center" style="margin-top:-50px">
-		<img src="{{asset('build/images/cible.2301f272c1346966af5174ff68e01286.png')}}" alt="cible" width="170px" height="170px">
+	{% for message in app.flashes('message') %}
+		<div class="alert alert-info col-12 col-md-6 col-lg-6 shadow text-center position-fixed start-50 translate-middle-x" style="top:70px" role="alert">
+			<strong>{{message}}</strong>
+		</div>
+	{% endfor %}
+
+	<div class="d-flex flex-column  align-items-center text-center" style="margin-top:-20px">
+		<img src="{{asset('build/images/paper.c5174ddb009019ff379da96012613ad2.png')}}" alt="cible" width="170px" height="170px">
 		<h1 class="fw-bold">Ajouter Une Reclamation</h1>
 		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex, labore.</p>
 		<div class="col-md-8 col-lg-6 col-sm-10">
@@ -25,12 +25,12 @@
 
 		</div>
 
-		<div class="flex px-4  vw-100 align-items-start justify-content-start text-start my-4">
+		<div class="flex px-2 align-items-center justify-content-center text-center my-4">
 			<h1 class="fw-bold mt-5">Votre Reclamations</h1>
 			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, molestias.</p>
 		</div>
 
-		<table class="table table-striped table-hover mt-4">
+		<table class="table table-hover mt-4">
 			<thead>
 				<tr>
 					<th scope="col">#</th>
@@ -75,7 +75,17 @@
 							</div>
 						</td>
 					</tr>
+				{% else %}
+					<tr class="bg-white">
+						<td colspan="8" class="bg-white">
+							<div class="d-flex col-12 p-4 justify-content-center align-items-center">
+								<img src="{{asset('build/images/no_data.bfb5d09f027311a51c0c2adbe2dad775.png')}}" alt="cible" width="300px" height="300px">
+							</div>
+						</td>
+					</tr>
+
 				{% endfor %}
+
 			</tbody>
 		</table>
 		{% block scripts %}

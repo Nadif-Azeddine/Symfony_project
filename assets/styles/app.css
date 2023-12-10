@@ -15,15 +15,15 @@ body {
     color: inherit;
 }
 
-body::after {
+#main::after {
     content: "";
     position: absolute;
     top: -100px;
-    left: 70%;
-    transform: translateX(-50%);
+    left: 50%;
+    transform: translate(-50%);
     width: 50%;
     height: 400px;
-    background: linear-gradient(var(--secondary), var(--primary), var(--third));
+    background: linear-gradient(var(--secondary), var(--primary));
     filter: blur(100px);
     z-index: -1;
 }
@@ -41,7 +41,7 @@ body::after {
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.781);
+    background-color: rgb(255, 255, 255);
     backdrop-filter: blur(20px);
 }
 
@@ -61,7 +61,7 @@ button:focus {
 
 .card {
     border: 0px solid black;
-    background: linear-gradient(160deg, var(--third) 20%, var(--primary) 110%);
+    background: linear-gradient(-40deg, var(--primary), transparent 100%);
 }
 
 form .text-area {
@@ -86,13 +86,22 @@ form ul li {
 
 @media (max-width: 600px) {
     .ball {
-        left: 110% !important;
-        top: 112px !important;
+        display: none !important;
+        visibility: hidden !important;
     }
 
     .ball img {
-        width: 220px !important;
-        height: 220px !important;
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #event-img{
+        width: 300px !important;
+        height: 300px !important;
+    }
+
+    .fancy-title{
+        font-size: 3em !important;
     }
 
 }
@@ -112,6 +121,9 @@ form ul li {
 }
 
 .h-px-50 {
+    height: 50px !important
+}
+.h-px-60 {
     height: 50px !important
 }
 
@@ -162,3 +174,11 @@ form ul li {
 .h-px-800 {
     height: 800px !important
 }
+
+
+
+
+
+
+
+

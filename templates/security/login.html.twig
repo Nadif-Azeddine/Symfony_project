@@ -13,8 +13,9 @@
 	<form method="post">
 
 		<div class="d-flex flex-column py-3 align-items-center col-12 vh-100">
-			<div class="card col-md-8 rounded-4 shadow col-lg-6 col-11" style="background:#fff !important">
+			<div class="card col-md-7 rounded-4 shadow col-lg-5 col-11" style="background:#fff !important">
 				<div class="card-body py-4">
+					<h2 class=" text-center mb-5">Connectez-vous</h2>
 					{% if error %}
 						<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 					{% endif %}
@@ -31,6 +32,7 @@
 					<button class="btn px-5 col-12 mt-3 py-2 btn-primary rounded-5 shadow">Connecter</button>
 
 				</form>
+
 			</div>
 		</div>
 	</div>

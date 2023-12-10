@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!
+			{% block title %} ESTS | Club Sports
 			{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		{% include 'layouts/navbar.html.twig' %}
-		<div class="h-px-75"></div>
+		<div style="height:56px"></div>
 		<div class="container px-3 py-2 px-lg-5 px-md-4 py-lg-3 py-md-3" style="max-width: 100%; overflow-x:hidden"> {% block body %}{% endblock %}
 			</div>
 

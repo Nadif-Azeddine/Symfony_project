@@ -1,64 +1,92 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!
+{% block title %}
+	ESTS | Club Sports
 {% endblock %}
 
 {% block body %}
+	<main id="main">
 
-	<div class="landing-section row h-px-300 align-items-center justify-content-between position-relative" style="margin-bottom:100px;">
-		<div class="col-md-6 col-sm-10">
-			<h2 style="font-size:3em;" class="my-0">ESTS:</h2>
-			<h1 class="text-xl my-0 fw-bold w-sm-50 mt-0 " style="font-size:4.5rem">
-				CLUB DU
-				<br>
-				SPORTS</h1>
-			<p class="fs-6">
-				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi veritatis totam fuga fugit officia consequuntur temporibus. Saepe sunt velit cumque!</p>
-		
-		{% if is_granted("ROLE_ADMIN") %}
-			<a href="{{path('app_dashboard')}}" class="btn btn-primary px-5 py-2 border-lg text-center">Dashboard</a>
-		{% endif %}
-		
-		</div>
-		<div class="position-absolute start-100 col-sm-5 col-md-7 top-50 end-0 translate-middle z-0 ball">
-			<img src="{{asset('build/images/basket.03742b5bd44ee1943696c421492ef4a5.png')}}" alt="basket" width="360px" height="360px">
-		</div>
-	</div>
 
-	<div class="row my-5 justify-content-center gap-5">
-		<div class="card  col-sm-8 col-md-3 rounded-4 position-relative z-0" style="min-height:350px; overflow: hidden">
-			<div class="card-body">
-				<div class="col-12">
-					<img src="{{asset('build/images/cible.2301f272c1346966af5174ff68e01286.png')}}" alt="cible" class="position-absolute" style="bottom:-100px; right:-100px" width="300px" height="300px">
-					<h2 class="card-title mt-3">OBJECTIF</h2>
-					<p class="card-text ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, iste!</p>
-				</div>
+		<div class="landing-section mt-2 row align-items-center justify-content-center text-center position-relative" style="margin-bottom:50px;">
+			<div class="col-md-6 col-sm-10">
+				<h2 style="font-size:3em;" class="my-0">ESTS:</h2>
+				<h1 class="text-xl my-0 fw-bold w-sm-50 mt-0 " style="font-size:5rem">
+					CLUB DU
+					<br>
+					SPORTS</h1>
+				<p class="fs-6">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi veritatis totam fuga fugit officia consequuntur temporibus. Saepe sunt velit cumque!</p>
+
+				{% if is_granted("ROLE_ADMIN") %}
+					<a href="{{path('app_dashboard')}}" class="btn btn-primary px-5 py-2 col-6 rounded-pill text-center">Dashboard</a>
+				{% endif %}
+
+			</div>
+			<div class="position-absolute col-4 start-100 top-50 end-0 translate-middle z-0 ball" style="right:20%" >
+				<img src="{{asset('build/images/goal.b3766f064af25beb92f38bf7e0a58c39.png')}}" alt="goal" width="400px" height="600px">
+			</div>
+
+			<div class="position-absolute col-4 start-0 top-50 end-0 translate-middle z-0 ball" style="right:20%" >
+				<img src="{{asset('build/images/goal-left.579dba845dddb179a6afe81f7cd3daa7.png')}}" alt="goal" width="400px" height="600px">
 			</div>
 		</div>
 
-		<div class="card  col-sm-8 col-md-3 rounded-4 position-relative z-0" style="min-height:350px; overflow: hidden">
-			<div class="card-body">
-				<div class="col-12">
-					<img src="{{asset('build/images/basket.03742b5bd44ee1943696c421492ef4a5.png')}}" alt="cible" class="position-absolute" style="bottom:-100px; right:-100px" width="250px" height="250px">
-					<h2 class="card-title mt-3">ACTIVITIES</h2>
-					<p class="card-text ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, iste!</p>
-				</div>
+		<div style="height:50px"></div>
+
+		<div class="d-flex justify-content-between align-items-center col-12 flex-wrap-reverse rounded-4  align-items-start p-3" style="min-height:350px; background: linear-gradient(180deg, var(--primary), transparent 100%)">
+			<div class="col-6 d-flex justify-content-center my-0">
+				<img id="event-img" src="{{asset('/build/images/chess.73529ef21fde6bc305f146caf4f851e3.png')}}" width="450x" height="450px" alt="chess">
+			</div>
+
+			<div class="col-12 col-md-6 col-lg-6 ">
+				<h1 class="fw-bold fancy-title" style="font-size:5em">ASSISTEZ À L'ÉVÉNEMENT!</h1>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, laborum! Earum, eos? Temporibus hic in voluptatum, aut nemo quidem libero.</p>
 			</div>
 		</div>
 
-		<div class="card  col-sm-8 col-md-3 rounded-4 position-relative z-0" style="min-height:350px; overflow: hidden">
-			<div class="card-body">
-				<div class="col-12">
-					<img src="{{asset('build/images/trophy.23a5624655ec8df8534fc8ae51feccb8.png')}}" alt="cible" class="position-absolute" style="bottom:-100px; right:-120px" width="350px" height="350px">
-					<h2 class="card-title mt-3">{{'Compétitions'|upper}}</h2>
-					<p class="card-text ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, iste!</p>
+		<div class="h-px-25"></div>
+
+		<div class="px-2 col-12 col-sm-6 mt-5">
+			<h1 class="fw-bold" style="font-size:3em">POURQUOI VOUS DEVRIEZ NOUS REJOINDRE?</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, ex.</p>
+		</div>
+		<div class="row my-5 justify-content-center gap-5">
+			<div class="card col-10 col-md-3 rounded-4 position-relative z-0" style="min-height:350px; overflow: hidden">
+				<div class="card-body">
+					<div class="col-12">
+						<img src="{{asset('build/images/cible.2301f272c1346966af5174ff68e01286.png')}}" alt="cible" class="position-absolute" style="bottom:-100px; right:-100px" width="300px" height="300px">
+						<h2 class="card-title mt-3">OBJECTIF</h2>
+						<p class="card-text ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, iste!</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="col-12 position-relative mt-5 justify-content-center align-items-center text-center">
-			<h2>Ce que vous pensez?</h2>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ad!</p>
-			<a href="/reclamation" class="btn px-5 py-2 btn-primary rounded-5 shadow">Ajouter reclamation</a>
-		</div>
-	
+
+			<div class="card col-10 col-md-3 rounded-4 position-relative z-0" style="min-height:350px; overflow: hidden">
+				<div class="card-body">
+					<div class="col-12">
+						<img src="{{asset('build/images/basket.03742b5bd44ee1943696c421492ef4a5.png')}}" alt="cible" class="position-absolute" style="bottom:-100px; right:-100px" width="250px" height="250px">
+						<h2 class="card-title mt-3">ACTIVITIES</h2>
+						<p class="card-text ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, iste!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card col-10 col-md-3 rounded-4 position-relative z-0" style="min-height:350px; overflow: hidden">
+				<div class="card-body">
+					<div class="col-12">
+						<img src="{{asset('build/images/trophy.23a5624655ec8df8534fc8ae51feccb8.png')}}" alt="cible" class="position-absolute" style="bottom:-100px; right:-120px" width="350px" height="350px">
+						<h2 class="card-title mt-3">{{'Compétitions'|upper}}</h2>
+						<p class="card-text ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos, iste!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 position-relative mt-5 justify-content-center align-items-center text-center">
+				<h2>Ce que vous pensez?</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, ad!</p>
+				<a href="/reclamation" class="btn px-5 py-2 btn-primary rounded-5 shadow">Ajouter reclamation</a>
+			</div>
+
+		</main>
 	{% endblock %}
