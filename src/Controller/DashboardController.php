@@ -38,6 +38,7 @@ class DashboardController extends AbstractController
     #[Route('/export', name: 'export_data_csv')]
     public function exportData(): Response
     {
+        
 
         $data = $this->entityManager
         ->getRepository(Reclamation::class) 
@@ -62,6 +63,7 @@ class DashboardController extends AbstractController
     private function prepareCsvData(array $data): array
     {
         $columnNames = ['Reclamation', 'date Raclamation', 'Pseudo Nom', 'Nom', 'Prenom', 'Addresse',  'Profession', 'Sexe', 'Date Naissanse'];
+        
         $csvData = [];
         $csvData[] = $columnNames;
 

@@ -71,8 +71,7 @@ class RegistrationFormType extends AbstractType
             ->add('profession', ChoiceType::class, [
                 'choices' => [
                     'Member' => 'member',
-                    'example' => 'member',
-                    'test2' => 'member',
+                    'Professeur' => 'professeur',
 
                 ],
                 'attr' => [

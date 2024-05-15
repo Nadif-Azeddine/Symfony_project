@@ -46,7 +46,8 @@ class ReclamationController extends AbstractController
 
                 $this->entityManager->persist($reclamation);
                 $this->entityManager->flush();
-
+                
+                // 
                 $this->addFlash('message', 'reclamation added successfully');
 
                 return $this->redirectToRoute('app_reclamation');
@@ -85,6 +86,7 @@ class ReclamationController extends AbstractController
     public function edit(Request $request, $id): Response
     {
         $reclamation = $this->reclamationRepository->find($id);
+        
 
 
         if ($reclamation && ($reclamation->isBelongsTo($this->getUser()) || $this->getUser()->isAdmin())) {

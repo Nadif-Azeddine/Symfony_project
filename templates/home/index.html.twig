@@ -16,6 +16,7 @@
 				<p class="fs-6">
 					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi veritatis totam fuga fugit officia consequuntur temporibus. Saepe sunt velit cumque!</p>
 
+				{# check if the user is an admin #}
 				{% if is_granted("ROLE_ADMIN") %}
 					<a href="{{path('app_dashboard')}}" class="btn btn-primary px-5 py-2 col-6 rounded-pill text-center">Dashboard</a>
 				{% endif %}
